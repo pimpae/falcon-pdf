@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  web:
+    build: .
+    container_name: ConvertPDFToText
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 30999:80
+    networks:
+      - app-instance-network
+networks:
+  app-instance-network:
+    driver: bridge
